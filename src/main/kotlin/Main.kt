@@ -73,6 +73,7 @@ private fun uploadApk(appId: String, apkPath: String, credentialsPath: String, i
             mutableListOf(
                 TrackRelease()
                     .setVersionCodes(bundleVersionCode)
+                    .setStatus("completed")
                     .setInAppUpdatePriority(inAppUpdatePriority.toIntOrNull() ?: 0)
             )
         )
