@@ -64,7 +64,6 @@ private fun uploadApk(appId: String, apkPath: String, credentialsPath: String, i
     println("Uploaded apk versionCode: ${bundle.versionCode}")
 
     val bundleVersionCode = mutableListOf(bundle.versionCode.toLong())
-
     edits.tracks().update(
         appId,
         edit.id,
@@ -73,7 +72,7 @@ private fun uploadApk(appId: String, apkPath: String, credentialsPath: String, i
             mutableListOf(
                 TrackRelease()
                     .setVersionCodes(bundleVersionCode)
-                    .setStatus("completed")
+                    .setStatus("draft")
                     .setInAppUpdatePriority(inAppUpdatePriority.toIntOrNull() ?: 0)
             )
         )
